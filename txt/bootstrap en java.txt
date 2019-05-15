@@ -1,0 +1,81 @@
+									BOOTSTRAP	
+
+https://www.ecodeup.com/como-integrar-bootstrap-con-jsp-y-crear-un-proyecto-web-en-java8/
+
+
+----------------------------------------------------------------------------
+PROBLEMA: 
+
+"Could not load the Tomcat server configuration at \Servers\Tomcat v8.0 Server at localhost-config.
+The configuration may be corrupt or incomplete."
+
+SOLUCION: https://www.youtube.com/watch?v=TpNyR9qDYE8
+
+ALTERNATIVA: http://lucasterdev.altervista.org/wordpress/2012/05/12/could-not-load-the-tomcat-server-configuration-at-serverstomcat-v7-0-server-at-localhost-config-the-configuration-may-be-corrupt-or-incomplet/
+----------------------------------------------------------------------------
+PROBLEMA: 
+
+"Several ports (8005, 8080, 8009) required by Tomcat v8.0 Server at localhost are already in use.
+The server may already be running in another process, or a system process may be using the port.
+To start this server you will need to stop the other process or change the port number(s)."
+
+SOLUCION: 
+"You've another instance of Tomcat already running. 
+You can confirm this by going to http://localhost:8080 in your webbrowser and check if you get the Tomcat 
+default home page or a Tomcat-specific 404 error page. Both are equally valid evidence that Tomcat runs fine; 
+if it didn't, then you would have gotten a browser specific HTTP connection timeout error message.
+You need to shutdown it. Go to /bin subfolder of the Tomcat installation folder and execute the shutdown.bat (Windows)
+or shutdown.sh (Unix) script. If in vain, close Eclipse and then open the task manager and kill all java and/or javaw
+processes.
+Or if you actually installed it as a Windows service for some reason (this is namely intented for production and is
+unhelpful when you're just developing), open the services manager (Start > Run > services.msc) and stop the Tomcat
+service. If necessary, uninstall the Windows service altogether. For development, just the ZIP file is sufficient.
+Or if your actual intent is to run two instances of Tomcat simultaneously, then you have to configure the second instance
+to listen on different ports. Consult the Tomcat documentation for more detail."
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+									HIBERNATE
+
+https://www.youtube.com/watch?v=KHohVibqePw
+
+
+(1)MySQL Workbench: https://dev.mysql.com/downloads/workbench/ //(version 5.2.47)
+
+(2)MySQL Community Server: https://dev.mysql.com/downloads/mysql/ //(version 5.5.62)
+
+(3)copiar (2) dentro de (1) ----------> en C:\Program Files\MySQL\MySQL Workbench 
+
+PROBLEMA: "MySQL service is missing"
+
+SOLUCION: 
+	1)Start cmd
+	2)Go to the "C:\Program Files\MySQL\MySQL Server 5.6\bin"
+	3)type mysqld --install
+
+FUENTE: https://stackoverflow.com/questions/5679258/mysql-service-is-missing
+
+
+PROBLEMA: "Install/Remove of the service Denied"
+
+SOLUCION :
+	(1)Open cmd with Administrator rights to avoid "Install/Remove of the service Denied"
+	(2)Start cmd
+	(3)Go to the "C:\Program Files\MySQL\MySQL Server 5.6\bin"
+	(4)type mysqld --install
+	
+*Despues de esto podriamos abrir "Servicios" y encontrar MySQL
+
+PROBLEMA: "el servicio MySQL en el equipo local comenzó y luego se detuvo"
+	
+SOLUCION: Desinstalar todo e Instalar las versiones MySQL Workbench 5.2.47 con MySQL Community Server 5.5.62
+
+
+//DEPRECATED//--------------(lo dejo por si vuelve a suceder)-------------------------
+PROBLEMA: "Failed to connect to mysql at 127.0.0.1:3306 with user root"
+
+SOLUCION: 
+	1) En "C:\Program Files (x86)\MySQL\MySQL Server 5.5"(o la version que tengas instalada) encontramos un archivo que se llama "my-medium.ini"
+	2) COPIARLO y pegarlo en esa misma direccion
+	3) cambiarle el nombre a la copia a "my.ini"
+//DEPRECATED//--------------(lo dejo por si vuelve a suceder)-------------------------
